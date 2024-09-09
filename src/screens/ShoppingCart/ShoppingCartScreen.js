@@ -88,7 +88,9 @@ const renderItem = ({ item, dispatch }) => {
   }
 
   const quantityPrice =
-    item.price * item.quantity === 0 ? item.price : item.price * item.quantity
+    item.price * item.quantity === 0
+      ? item.price
+      : (item.price * item.quantity).toFixed(2)
 
   return (
     <View style={styles.itemContainer}>
