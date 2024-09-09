@@ -3,11 +3,7 @@ import { View, Text, FlatList, StyleSheet, SafeAreaView } from 'react-native'
 import PropTypes from 'prop-types'
 import { CartContext } from '../../contexts/CartContext'
 import colors from '../../theme/colors'
-import AddItem from '../../components/Item/AddItem/AddItem'
-import RemoveItem from '../../components/Item/RemoveItem/RemoveItem'
-import FeedbackItem, {
-  ToastType,
-} from '../../components/Item/FeedbackItem/FeedbackItem'
+import { AddItem, RemoveItem, FeedbackItem, ToastType } from '../../components'
 
 const styles = StyleSheet.create({
   buttonContainer: {
