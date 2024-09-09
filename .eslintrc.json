@@ -26,7 +26,14 @@
     "react/react-in-jsx-scope": "off",
     "no-unused-vars": "warn",
     "react-native/no-unused-styles": "warn",
-    "react-native/split-platform-components": "off"
+    "react-native/split-platform-components": "off",
+    "react/function-component-definition": [
+      2,
+      {
+        "namedComponents": ["arrow-function", "function-declaration"],
+        "unnamedComponents": "arrow-function"
+      }
+    ]
   },
   "settings": {
     "react": {
