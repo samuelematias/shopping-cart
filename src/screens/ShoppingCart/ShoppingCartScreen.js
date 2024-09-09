@@ -1,17 +1,13 @@
 import { useContext, useMemo } from 'react'
-import {
-  View,
-  Text,
-  FlatList,
-  TouchableOpacity,
-  StyleSheet,
-  SafeAreaView,
-} from 'react-native'
-import { FontAwesome, MaterialIcons } from '@expo/vector-icons'
-import Toast from 'react-native-toast-message'
+import { View, Text, FlatList, StyleSheet, SafeAreaView } from 'react-native'
 import PropTypes from 'prop-types'
 import { CartContext } from '../../contexts/CartContext'
 import colors from '../../theme/colors'
+import AddItem from '../../components/Item/AddItem/AddItem'
+import RemoveItem from '../../components/Item/RemoveItem/RemoveItem'
+import FeedbackItem, {
+  ToastType,
+} from '../../components/Item/FeedbackItem/FeedbackItem'
 
 const styles = StyleSheet.create({
   buttonContainer: {
@@ -70,45 +66,40 @@ const renderEmptyComponent = () => (
 const renderItem = ({ item, dispatch }) => {
   const handleAddItem = () => {
     dispatch({ type: 'ADD_ITEM', payload: item })
-    Toast.show({
-      type: 'success',
-      text1: 'Item added',
-      text2: `${item.name} has been added to cart.`,
+    FeedbackItem({
+      itemName: item.name,
+      type: ToastType.ITEM_ADDED,
     })
   }
 
   const handleRemoveItem = () => {
     dispatch({ type: 'REMOVE_ITEM', payload: item })
     if (item.quantity === 1) {
-      Toast.show({
-        type: 'error',
-        text1: 'Item removed',
-        text2: `${item.name} has been removed from cart.`,
+      FeedbackItem({
+        itemName: item.name,
+        type: ToastType.ITEM_REMOVED,
       })
     } else {
-      Toast.show({
-        type: 'error',
-        text1: 'Item updated',
-        text2: `Quantity of ${item.name} has been reduced from cart.`,
+      FeedbackItem({
+        itemName: item.name,
+        type: ToastType.ITEM_UPDATED,
       })
     }
   }
 
   const quantityPrice =
-    item.price * item.quantity === 0 ? item.price : item.price * item.quantity
+    item.price * item.quantity === 0
+      ? item.price
+      : (item.price * item.quantity).toFixed(2)
 
   return (
     <View style={styles.itemContainer}>
       <Text>{item.name}</Text>
       <View style={styles.buttonContainer}>
         <Text style={styles.textSize}>${item.price}x</Text>
-        <TouchableOpacity onPress={handleRemoveItem}>
-          <MaterialIcons name="remove-circle" size={24} color="red" />
-        </TouchableOpacity>
+        <RemoveItem onPress={handleRemoveItem} />
         <Text style={styles.textSize}>{item.quantity}</Text>
-        <TouchableOpacity onPress={handleAddItem}>
-          <FontAwesome name="plus-circle" size={24} color="green" />
-        </TouchableOpacity>
+        <AddItem onPress={handleAddItem} />
         <Text style={styles.textSize}>${quantityPrice}</Text>
       </View>
     </View>
