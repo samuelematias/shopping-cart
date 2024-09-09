@@ -1,25 +1,11 @@
 import { createStackNavigator } from '@react-navigation/stack'
-import { TouchableOpacity, StyleSheet } from 'react-native'
-import { FontAwesome } from '@expo/vector-icons'
 import { MenuScreen, ShoppingCartScreen } from '../screens'
-
-const styles = StyleSheet.create({
-  headerRight: {
-    marginRight: 10,
-  },
-})
+import { ShoppingCartIcon } from '../components'
 
 const Stack = createStackNavigator()
 
 const renderHeaderRight = (navigation) => {
-  return (
-    <TouchableOpacity
-      onPress={() => navigation.navigate('ShoppingCart')}
-      style={styles.headerRight}
-    >
-      <FontAwesome name="shopping-cart" size={24} color="blue" />
-    </TouchableOpacity>
-  )
+  return <ShoppingCartIcon navigation={navigation} />
 }
 
 const AppNavigator = () => {
