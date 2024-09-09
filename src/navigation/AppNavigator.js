@@ -1,8 +1,7 @@
 import { createStackNavigator } from '@react-navigation/stack'
 import { TouchableOpacity, StyleSheet } from 'react-native'
 import { FontAwesome } from '@expo/vector-icons'
-import MenuScreen from '../screens/Menu/MenuScreen'
-import ShoppingCartScreen from '../screens/ShoppingCart/ShoppingCartScreen'
+import { MenuScreen, ShoppingCartScreen } from '../screens'
 
 const styles = StyleSheet.create({
   headerRight: {

@@ -5,10 +5,7 @@ import PropTypes from 'prop-types'
 import { CartContext } from '../../contexts/CartContext'
 import { menuItems } from '../../data/menu'
 import colors from '../../theme/colors'
-import AddItem from '../../components/Item/AddItem/AddItem'
-import FeedbackItem, {
-  ToastType,
-} from '../../components/Item/FeedbackItem/FeedbackItem'
+import { AddItem, FeedbackItem, ToastType } from '../../components'
 
 const styles = StyleSheet.create({
   buttonContainer: {
