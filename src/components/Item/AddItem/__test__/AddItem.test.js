@@ -5,7 +5,7 @@ describe('AddItem', () => {
   it('renders the add item button', () => {
     const { getByTestId } = render(<AddItem onPress={jest.fn()} />)
 
-    const button = getByTestId('addItemBtton')
+    const button = getByTestId('addItemButton')
     expect(button).toBeTruthy()
   })
 
