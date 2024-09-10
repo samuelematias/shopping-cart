@@ -3,14 +3,16 @@
     "browser": true,
     "es2021": true,
     "node": true,
-    "react-native/react-native": true
+    "react-native/react-native": true,
+    "jest/globals": true
   },
   "extends": [
     "airbnb",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
     "plugin:react-native/all",
-    "plugin:prettier/recommended"
+    "plugin:prettier/recommended",
+    "plugin:jest/recommended"
   ],
   "parserOptions": {
     "ecmaFeatures": {
@@ -19,7 +21,7 @@
     "ecmaVersion": 12,
     "sourceType": "module"
   },
-  "plugins": ["react", "react-hooks", "react-native", "prettier"],
+  "plugins": ["react", "react-hooks", "react-native", "prettier", "jest"],
   "rules": {
     "prettier/prettier": ["error"],
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
