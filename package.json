@@ -8,7 +8,8 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "lint": "eslint . --ext .js,.jsx",
-    "format": "prettier --write \"./**/*.{js,jsx}\" --ignore-path .gitignore",
+    "formatWrite": "prettier --write \"./**/*.{js,jsx}\" --ignore-path .gitignore",
+    "formatCheck": "prettier --check \"./**/*.{js,jsx}\" --ignore-path .gitignore",
     "test": "jest"
   },
   "dependencies": {
