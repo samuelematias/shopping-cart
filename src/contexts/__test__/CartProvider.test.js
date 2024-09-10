@@ -1,5 +1,5 @@
 import { Button, Text } from 'react-native'
-import { render, fireEvent } from '@testing-library/react-native' // Usando a versão React Native
+import { render, fireEvent } from '@testing-library/react-native'
 import { CartProvider, CartContext } from '../CartContext'
 
 const TestComponent = () => {
@@ -31,14 +31,11 @@ describe('CartProvider', () => {
       </CartProvider>
     )
 
-    // Verifica o estado inicial
     expect(getByText(/Items in cart: 0/i)).toBeTruthy()
 
-    // Simula o clique para adicionar item
     const addButton = getByText('Add Item')
     fireEvent.press(addButton)
 
-    // Verifica se o item foi adicionado
     expect(getByText(/Items in cart: 1/i)).toBeTruthy()
   })
 })
