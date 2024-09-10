@@ -2,6 +2,7 @@
 
 ## Demo
 
+https://github.com/user-attachments/assets/fda5b193-2278-46e7-9703-33ddb101edcc
 
 ## Tech Stack
 
