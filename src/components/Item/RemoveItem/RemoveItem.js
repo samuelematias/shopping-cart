@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 
 const RemoveItem = ({ onPress }) => {
   return (
-    <TouchableOpacity onPress={onPress}>
+    <TouchableOpacity onPress={onPress} testID="removeItemButton">
       <MaterialIcons name="remove-circle" size={24} color="red" />
     </TouchableOpacity>
   )

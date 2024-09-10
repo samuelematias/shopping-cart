@@ -8,7 +8,7 @@ const initialState = {
   shoppingCartItems: [],
 }
 
-function cartReducer(state, action) {
+export function cartReducer(state, action) {
   switch (action.type) {
     case 'LOAD_ITEMS':
       return {

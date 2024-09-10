@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 
 const AddItem = ({ onPress }) => {
   return (
-    <TouchableOpacity onPress={onPress}>
+    <TouchableOpacity onPress={onPress} testID="addItemButton">
       <FontAwesome name="plus-circle" size={24} color="green" />
     </TouchableOpacity>
   )

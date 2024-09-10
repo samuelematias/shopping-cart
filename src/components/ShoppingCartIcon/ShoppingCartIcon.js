@@ -40,6 +40,7 @@ const ShoppingCartIcon = ({ navigation }) => {
     <TouchableOpacity
       onPress={() => navigation.navigate('ShoppingCart')}
       style={styles.iconContainer}
+      testID="shoppingCartIcon"
     >
       <FontAwesome name="shopping-cart" size={24} color="blue" />
       {totalItems > 0 && (
