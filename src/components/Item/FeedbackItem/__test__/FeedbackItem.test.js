@@ -1,4 +1,3 @@
-import React from 'react'
 import { render } from '@testing-library/react-native'
 import Toast from 'react-native-toast-message'
 import FeedbackItem, { ToastType } from '../FeedbackItem'

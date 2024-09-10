@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import { useContext } from 'react'
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
 import { FontAwesome } from '@expo/vector-icons'
 import PropTypes from 'prop-types'
